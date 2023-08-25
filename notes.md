@@ -28,6 +28,18 @@ Os controladores devem lidar com solicitações HTTP e delegar tarefas mais comp
 
 Os provider são inicializados junto com o aplicativo e destruidos ao final dele. Esse comportamento pode ser modificado.
 
+# Módulos
+
+Os módulos são classes anotadas com o decorator @Module. Eles provem os metadados para organizar a estrutura dos aplicativos.
+
+Cada aplicação possui pelo menos um módulo, o módulo raiz. O módulo raiz é o ponto de partida que o Nest usa para criar o gráfico de aplicação.
+A arquitetura dos aplicativos em geral possuem vários módulos, cada um encapsulando um conjunto de recursos.
+
+**Módulos de recursos** 
+Um módulo de recurso simplesmente organiza o código relevante para um recurso específico, 
+mantendo o código organizado e estabelecendo limites.
+
+
 # DTO - Data Transfer Object
 
 Um DTO é um objeto que define como os dados serão enviados pela rede.
@@ -35,3 +47,18 @@ Um DTO é um objeto que define como os dados serão enviados pela rede.
 # Geral
 
 Para criarmos uma nova rota precisamos criar o controlador e adicionar ele no modulo
+
+# Monorepo
+
+Padrão em que utilizamos um único repositório para guardar todos os projetos.
+
+Vantagens:
+- Ambiente de desenvolvimento
+- Reutilização de código
+- Gerenciamento de dependências
+- Gerenciamento de versões
+
+Desvantagens:
+- CI/CD: podem se tornar complexos, não é trivial identificar qual aplicação está sendo alterada, dificultando a automatização.
+- Segurança: todos os desenvolvedores tem acesso a tudo.
+- 
